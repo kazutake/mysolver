@@ -1,2 +1,2 @@
-# Python program examle for the iRIC private solver
+# Python program example for the iRIC private solver
 
