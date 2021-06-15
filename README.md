@@ -17,7 +17,8 @@ Execute command is as follow.
 > python main.py case1.cgn
 ```
 
-So add followings into the "launch.json" if you would like to run this solve on the Visual Studio Code. Example for the "launch.json" is in here.
+So add followings into the "launch.json" if you would like to run this solver on the Visual Studio Code. Example for the "launch.json" is in here.
+
 ```
 "args": ["Case1.cgn"],
 ```
