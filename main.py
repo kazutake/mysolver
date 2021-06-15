@@ -1,6 +1,7 @@
 import sys
 import iric
 import numpy as np
+import random
 
 #--------------------------------------------------
 # 計算結果出力関数
@@ -55,7 +56,7 @@ def main(fname0):
     zz = z.reshape(nj, ni)  #1次元配列で読みこまれるため２次元配列に形状変更
 
     # 格子属性　粗度
-    s = iric.cg_iRIC_Read_Grid_Real_Cell('roughness_cell')
+    s = iric.cg_iRIC_Read_Grid_Real_Cell('ManningN')
     ss = s.reshape(nj-1, ni-1)  #1次元配列で読みこまれるため２次元配列に形状変更
 
     # ## for debug 2d plot
@@ -66,20 +67,17 @@ def main(fname0):
     # 計算条件の読込
     # 関数リファレンス
     # https://iric-solver-dev-manual-jp.readthedocs.io/ja/latest/06/03_reference.html
-    cip = iric.cg_iRIC_Read_Integer('j_cip')
-    conf = iric.cg_iRIC_Read_Integer('j_conf')
+    cip = iric.cg_iRIC_Read_Integer('iflow')
+    conf = iric.cg_iRIC_Read_Integer('isediment')
 
     #流量条件
-    t_series = iric.cg_iRIC_Read_FunctionalWithName('discharge_waterlevel', 'time')
-    q_series = iric.cg_iRIC_Read_FunctionalWithName('discharge_waterlevel', 'discharge')
+    t_series = 3600. * iric.cg_iRIC_Read_FunctionalWithName('tqh', 'time')
+    q_series = iric.cg_iRIC_Read_FunctionalWithName('tqh', 'discharge')
 
-    #計算時間の設定
-    if iric.cg_iRIC_Read_Integer('i_sec_hour') == 2:
-        t_series = t_series*3600.
-
+    # 時間条件の設定
     t_start = t_series[0]
     t_end = t_series[-1]
-    t_out = iric.cg_iRIC_Read_Real('tuk')
+    t_out = iric.cg_iRIC_Read_Real('tout')
     dt = iric.cg_iRIC_Read_Real('dt')
 
     istart = int(t_start / dt)
@@ -87,9 +85,13 @@ def main(fname0):
     iout = int(t_out / dt)
 
     #流れ計算の初期条件を設定する
-    uu = np.zeros(nj*ni, dtype = np.float64).reshape(nj, ni)
-    vv = np.zeros(nj*ni, dtype = np.float64).reshape(nj, ni)
-    hs = np.zeros((nj-1)*(ni-1), dtype = np.float64).reshape(nj-1, ni-1)
+    uu = np.random.rand(nj*ni).reshape(nj, ni)
+    vv = np.random.rand(nj*ni).reshape(nj, ni)
+    hs = np.random.rand((nj-1)*(ni-1)).reshape(nj-1, ni-1)
+    # uu = np.zeros(nj*ni, dtype = np.float64).reshape(nj, ni)
+    # vv = np.zeros(nj*ni, dtype = np.float64).reshape(nj, ni)
+    # hs = np.zeros((nj-1)*(ni-1), dtype = np.float64).reshape(nj-1, ni-1)
+
     zb = 0.25*(zz[0:nj-1,0:ni-1]+zz[1:nj,0:ni-1]+zz[0:nj-1,1:ni]+zz[1:nj,1:ni])
     hh = hs + zb
     
@@ -110,10 +112,11 @@ def main(fname0):
 
         # 流況更新・河床高更新など
         # 更新される変数は、uu,vv, hh, hs (河床変動が有効の場合zbも)
-        
-
-
-
+        facX = random.random() * 0.0001
+        uu = uu + facX * uu
+        vv = vv + facX * vv
+        hs = hs + facX * hs
+        hh = hs + zb
 
     # ファイルを閉じる
     iric.cg_close(fid)

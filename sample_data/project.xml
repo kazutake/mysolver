@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iRICProject version="3.0.19.6741" solverName="mysolver" solverVersion="1.0" timeFormat="elapsed|SS sec" customTimeFormat="" offsetX="0" offsetY="0">
+    <CgnsFileList current="Case1">
+        <CgnsFileEntry filename="Case1" comment=""/>
+    </CgnsFileList>
+    <MeasuredDatas/>
+    <CalculationResult currentStep="0"/>
+    <PostProcessors/>
+    <Backgrounds/>
+    <PreProcessorWindow backgroundColor="#ffffff" visible="true" maximized="true" left="0" top="0" width="1253" height="607">
+        <Camera positionX="2.79788" positionY="0.242468" positionZ="200" focalpointX="2.79788" focalpointY="0.242468" focalpointZ="0" roll="0" parallelscale="1.92525" parallelprojection="true"/>
+        <DataModel isExpanded="false" mappingMode="0" geoMappingMode="0" tempAutoRegion="1" tempStreamWiseLength="4" tempCrossStreamLength="1" numExpansion="3" weightExponent="1">
+            <BackgroundImages checkState="2" isExpanded="true"/>
+            <GridType checkState="2" isExpanded="false" name="mysolver">
+                <ColorMaps>
+                    <ColorMap name="Elevation" autoRange="true" autoMin="-0.024" autoMax="0" manualMin="0" manualMax="0" colorMap="0"/>
+                    <ColorMap name="ManningN" autoRange="true" autoMin="0.0198" autoMax="0.0202" manualMin="0" manualMax="0" colorMap="0"/>
+                </ColorMaps>
+                <GeoData checkState="2" isExpanded="true" visible="true">
+                    <GeoDataGroup checkState="2" isExpanded="true" visible="true" orientation="0" quadrant="0" numberOfLabels="8" width="0.1" height="0.3" positionX="0.8" positionY="0.1" labelFormat="%-#6.3g" titleTextFontFamily="0" titleTextFontColor="#000000" titleTextFontSize="10" titleTextFontIsBold="false" titleTextFontIsItalic="false" titleTextFontIsShadow="false" labelTextFontFamily="0" labelTextFontColor="#000000" labelTextFontSize="10" labelTextFontIsBold="false" labelTextFontIsItalic="false" labelTextFontIsShadow="false" name="Elevation">
+                        <GeoData checkState="2" isExpanded="false" type="realBackground" name="background" caption="デフォルト" mapped="true"/>
+                    </GeoDataGroup>
+                    <GeoDataGroup checkState="2" isExpanded="true" visible="true" orientation="0" quadrant="0" numberOfLabels="8" width="0.1" height="0.3" positionX="0.8" positionY="0.1" labelFormat="%-#6.3g" titleTextFontFamily="0" titleTextFontColor="#000000" titleTextFontSize="10" titleTextFontIsBold="false" titleTextFontIsItalic="false" titleTextFontIsShadow="false" labelTextFontFamily="0" labelTextFontColor="#000000" labelTextFontSize="10" labelTextFontIsBold="false" labelTextFontIsItalic="false" labelTextFontIsShadow="false" name="ManningN">
+                        <GeoData checkState="2" isExpanded="false" type="realBackground" name="background" caption="デフォルト" mapped="true"/>
+                    </GeoDataGroup>
+                    <GeoDataGroup checkState="2" isExpanded="true" visible="true" orientation="0" quadrant="0" numberOfLabels="8" width="0.1" height="0.3" positionX="0.8" positionY="0.1" labelFormat="%-#6.3g" titleTextFontFamily="0" titleTextFontColor="#000000" titleTextFontSize="10" titleTextFontIsBold="false" titleTextFontIsItalic="false" titleTextFontIsShadow="false" labelTextFontFamily="0" labelTextFontColor="#000000" labelTextFontSize="10" labelTextFontIsBold="false" labelTextFontIsItalic="false" labelTextFontIsShadow="false" name="_referenceinformation">
+                        <GeoData checkState="2" isExpanded="false" type="realBackground" name="background" caption="デフォルト" mapped="true"/>
+                    </GeoDataGroup>
+                </GeoData>
+                <HydraulicData isExpanded="false">
+                    <HydraulicDataGroup isExpanded="false" name="waterelevation">
+                        <HydraulicData isExpanded="false" name="wse1" caption="WSE"/>
+                    </HydraulicDataGroup>
+                </HydraulicData>
+                <Region checkState="2" isExpanded="false" zoneName="iRICZone" caption="領域">
+                    <GridCreatingCondition checkState="2" isExpanded="true" name="gridgenerator"/>
+                    <BoundaryConditionSettings checkState="2" isExpanded="false"/>
+                    <Grid checkState="2" isExpanded="true">
+                        <Shape checkState="2" isExpanded="false" color="#000000" shape="1" indexVisible="false" indexColor="#000000"/>
+                        <NodeAttributes checkState="0" isExpanded="true" opacityPercent="50">
+                            <NodeAttribute name="Elevation" checkState="2" isExpanded="false" isCustomModified="0">
+                                <Contour ContourType="3" NumberOfDivision="10"/>
+                            </NodeAttribute>
+                        </NodeAttributes>
+                        <CellAttributes checkState="2" isExpanded="true" opacityPercent="50">
+                            <CellAttribute name="ManningN" checkState="2" isExpanded="false" isCustomModified="false"/>
+                        </CellAttributes>
+                    </Grid>
+                </Region>
+            </GridType>
+            <MeasuredDatas checkState="2" isExpanded="true"/>
+            <InputCondition isExpanded="false" isSet="true"/>
+            <Axes checkState="2" isExpanded="true"/>
+            <DistanceMeasures checkState="2" isExpanded="true">
+                <DistanceMeasure checkState="2" isExpanded="true" name="計測1" defined="false" point1X="0" point1Y="0" point2X="0" point2Y="0" showLabel="true" labelMode="0" labelPosition="2" fontFamily="0" fontColor="#000000" fontSize="12" fontIsBold="false" fontIsItalic="false" fontIsShadow="false" customLabel="" showMarkers="true" markerSize="7" color="#000000"/>
+            </DistanceMeasures>
+            <TmsBackground checkState="2" isExpanded="true" target=""/>
+        </DataModel>
+    </PreProcessorWindow>
+    <SolverConsoleWindow visible="false" maximized="false" left="30" top="30" width="700" height="500" backgroundColor="#c8c8c8"/>
+    <PostProcessorFactory/>
+</iRICProject>

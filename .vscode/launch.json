@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "args": ["Case1.cgn"],
+            "args": ["./sample_data/Case1.cgn"],
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
