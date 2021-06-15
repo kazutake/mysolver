@@ -4,6 +4,8 @@
 ## main.py
 This file is the python program example for the iRIC private solver.
 
+## definition.xml
+This file defines the input data interface for the iRIC software.
 
 ## Case1.cgn
 This file is the samle data for the mysolver.
