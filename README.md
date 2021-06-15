@@ -6,7 +6,7 @@ This file is the python program example for the iRIC private solver.
 
 
 ## Case1.cgn
-This file is the samle data for the iRIC solver which was produced by the Nays2DH.
+This file is the samle data for the mysolver.
 
 
 # How to execute 
